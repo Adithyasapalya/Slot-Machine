@@ -22,7 +22,7 @@ def get_no_of_lines():
             if 1 <= lines <= MAX_LINES:
                 break
             else:
-                print("Please enter an lines greater than zero.")
+                print("Enter valid number of lines.")
         else:
             print("Invalid input. Please enter a numeric value.")
     return lines
@@ -30,3 +30,7 @@ def get_no_of_lines():
 
 def main():
     balance = deposit()
+    lines = get_no_of_lines() 
+    print(balance, lines)
+
+main()
