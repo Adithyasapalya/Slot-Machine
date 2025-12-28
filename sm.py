@@ -1,4 +1,4 @@
-
+# A Slot Machine Game, where the user can deposit money, place bets on multiple lines, and spin the slot machine to win or lose money.
 import random
 
 MAX_LINES = 3
