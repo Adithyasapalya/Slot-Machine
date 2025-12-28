@@ -22,6 +22,15 @@ def get_slots_machine_spin(rows, cols, symbols):
             all_symbols.append(symbol)
 
     columns = [[], [], []]
+    for _ in range(cols):
+        current_symbols = all_symbols[:]
+        column=[]
+        for _ in range(rows):
+            value = random.choice(current_symbols)
+            current_symbols.remove(value)
+            column.append(value)
+        columns.append(column)
+
 
 def deposit():
     while True:
