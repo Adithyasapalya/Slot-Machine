@@ -15,6 +15,14 @@ sybmols_count = {
     "D": 8
 }
 
+def get_slots_machine_spin(rows, cols, symbols):
+    all_symbols=[]
+    for symbol, symbol_count in symbols.items():
+        for _ in range(symbol_count):
+            all_symbols.append(symbol)
+
+    columns = [[], [], []]
+
 def deposit():
     while True:
         amount = input("What would you like to deposit?  :$ ")
