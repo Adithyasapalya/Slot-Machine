@@ -8,7 +8,7 @@ MIN_BET = 1
 ROWS = 3
 COLS = 3
 
-sybmols_count = {
+symbols_count = {
     "A": 2,
     "B": 4,
     "C": 6,
@@ -21,10 +21,10 @@ def get_slots_machine_spin(rows, cols, symbols):
         for _ in range(symbol_count):
             all_symbols.append(symbol)
 
-    columns = [[], [], []]
+    columns = []
     for _ in range(cols):
         current_symbols = all_symbols[:]
-        column=[]
+        column = []
         for _ in range(rows):
             value = random.choice(current_symbols)
             current_symbols.remove(value)
@@ -40,6 +40,7 @@ def print_slot_machine(columns):
                 print(column[row], end=" | ")
             else:
                 print(column[row], end="")
+
         print()
 
 
@@ -77,7 +78,7 @@ def get_bet():
             if MIN_BET <= amount <= MAX_BET:
                 break
             else:
-                print("Amount must be between ${MIN_BET} and ${MAX_BET}.")
+                print(f"Amount must be between ${MIN_BET} and ${MAX_BET}.")
         else:
             print("Invalid input. Please enter a numeric value.")
     return amount
@@ -96,5 +97,9 @@ def main():
             break
     print(f"You are betting ${bet} on {lines} lines. Total bet is: ${total_bet}")
     
+
+    slots = get_slots_machine_spin(ROWS, COLS, symbols_count)
+    print_slot_machine(slots)
+
 
 main()
